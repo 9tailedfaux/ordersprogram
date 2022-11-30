@@ -1,4 +1,5 @@
 package models
 
-class Menu {
-}
+data class Menu(
+    val meals: HashMap<String, Meal>
+)
