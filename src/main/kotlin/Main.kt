@@ -1,8 +1,22 @@
+import models.DataParserUtility
 import kotlin.system.exitProcess
+
+/*
+hi!
+the sample data is very limiting since each part (henceforth called a "course") has only one possible food item,
+with the water being a weird exception.
+thus the core data parsing is included in the abstractdataparserutility
+this is inherited by dataparserutility
+you should use this one.
+there is an abstract function for parsing courses but i have not filled it in as they are indistinct
+were you to extend this and fill in the logic for that
+in this case, you would also have to redo the driver (this main function)
+ */
 
 fun main(args: Array<String>) {
     var items: IntArray
     var menu: String
+    val parser = DataParserUtility.getInstance()
 
     when (args.size) {
         0 -> {
@@ -14,32 +28,23 @@ fun main(args: Array<String>) {
             exitProcess(1)
         }
         2 -> {
-            items = parseItems(args.last())
+            items = parser.parseItems(args.last())
             menu = DEFAULT_MENU
         }
         else -> {
             try {
                 args.last().toInt()
-                items = parseItems(args.copyOfRange(1, args.size))
+                items = parser.parseItems(args.copyOfRange(1, args.size))
                 menu = DEFAULT_MENU
             } catch (e: NumberFormatException) {
                 menu = args.last()
-                items = parseItems(args.copyOfRange(1, args.lastIndex))
+                items = parser.parseItems(args.copyOfRange(1, args.lastIndex))
             }
         }
     }
 
-    Application(meal = args.first(), items, menu)
+    //since items == courses in the given project, the same value is passed
+    Application(meal = args.first(), items = items, menu = menu, courses = items).start()
 }
 
 const val DEFAULT_MENU = "menu.json"
-
-fun parseItems(items: Array<String>): IntArray {
-    var string = ""
-    for (item in items) {
-        string += item
-    }
-    return parseItems(string)
-}
-
-fun parseItems(items: String): IntArray = items.split(",").map { it.toInt() }.toIntArray().also { it.sort() }

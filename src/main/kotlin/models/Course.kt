@@ -1,8 +1,8 @@
 package models
 
 data class Course(
-    val item: Array<Item>,
+    val items: Array<Item>,
     val name: String,
     val default: Item,
-    val duplicatesAllowed: Boolean
+    val multipleAllowed: Boolean
 )
