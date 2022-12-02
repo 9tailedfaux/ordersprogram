@@ -7,4 +7,8 @@ data class Item(
     val course: Course,
     val multipleAllowed: Boolean,
     val provided: Boolean
-)
+) {
+    override fun toString(): String {
+        return name
+    }
+}

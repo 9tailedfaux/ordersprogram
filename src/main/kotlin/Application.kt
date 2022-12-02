@@ -1,10 +1,10 @@
 import models.DataParserUtility
 import models.Menu
-import models.Order
+import models.InitialOrder
 
 class Application(meal: String, items: IntArray, menu: String, courses: IntArray) {
     fun start() {
-        if (!parser.checkOrderValidity(order, parsedMenu) {
+        if (!parser.checkOrderValidity(initialOrder, parsedMenu) {
             println(it)
         }) return
 
@@ -13,5 +13,5 @@ class Application(meal: String, items: IntArray, menu: String, courses: IntArray
 
     val parser = DataParserUtility.getInstance()
     val parsedMenu = Menu(parser.parseMenu(menu))
-    val order = Order(items, courses, meal)
+    val initialOrder = InitialOrder(items, courses, meal)
 }

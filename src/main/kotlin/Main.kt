@@ -1,26 +1,19 @@
 import models.DataParserUtility
 import kotlin.system.exitProcess
 
-/*
-hi!
-the sample data is very limiting since each part (henceforth called a "course") has only one possible food item,
-with the water being a weird exception.
-thus the core data parsing is included in the abstractdataparserutility
-this is inherited by dataparserutility
-you should use this one.
-there is an abstract function for parsing courses but i have not filled it in as they are indistinct
-were you to extend this and fill in the logic for that
-in this case, you would also have to redo the driver (this main function)
- */
-
 fun main(args: Array<String>) {
-    var items: IntArray
-    var menu: String
+    val items: IntArray
+    var courses: IntArray? = null
+    val menu: String
     val parser = DataParserUtility.getInstance()
 
     when (args.size) {
         0 -> {
-            println("Usage: ordersprogram [meal] [items] [alternative menu json (optional)]")
+            println("Usage: ordersprogram [meal] [item numbers] [course numbers] [alternative menu json (optional)]" +
+                    "\nItem numbers: comma separated, no spaces" +
+                    "\nCourse numbers: optional. comma separated, no spaces. corresponds to items. if omitted, item numbers will be used" +
+                    "\nAlternative menu: path to a .json file. optional. if omitted, default menu will be used" +
+                    "default menu json can be found in menu.json in this project")
             exitProcess(0)
         }
         1 -> {
@@ -28,23 +21,28 @@ fun main(args: Array<String>) {
             exitProcess(1)
         }
         2 -> {
-            items = parser.parseItems(args.last())
+            items = parser.parseItemsCourses(args[1])
             menu = DEFAULT_MENU
         }
-        else -> {
-            try {
-                args.last().toInt()
-                items = parser.parseItems(args.copyOfRange(1, args.size))
-                menu = DEFAULT_MENU
-            } catch (e: NumberFormatException) {
-                menu = args.last()
-                items = parser.parseItems(args.copyOfRange(1, args.lastIndex))
+        in 3..4 -> {
+            menu = if (args.last().last().isLetter()) {
+                args.last()
+            } else {
+                DEFAULT_MENU
             }
+            items = parser.parseItemsCourses(args[1])
+            if (args.size == 4) {
+                courses = parser.parseItemsCourses(args[2])
+            }
+        }
+        else -> {
+            println("Too many arguments. What is you doing?")
+            exitProcess(1)
         }
     }
 
     //since items == courses in the given project, the same value is passed
-    Application(meal = args.first(), items = items, menu = menu, courses = items).start()
+    Application(meal = args.first(), items = items, menu = menu, courses = courses ?: items).start()
 }
 
 const val DEFAULT_MENU = "menu.json"
