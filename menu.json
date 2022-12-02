@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Breakfast",
+    "courses": [
+      {
+        "name": "Main",
+        "number": 1,
+        "required": true,
+        "multiple_allowed": false,
+        "items": [
+          {
+            "name": "Eggs",
+            "number": 1,
+            "multiple_allowed": false,
+            "provided": false,
+            "default": false,
+            "user_specified": true
+          }
+        ]
+      },
+      {
+        "name": "Side",
+        "number": 2,
+        "required": true,
+        "multiple_allowed": false,
+        "items": [
+          {
+            "name": "Toast",
+            "number": 2,
+            "multiple_allowed": false,
+            "provided": false,
+            "default": false,
+            "user_specified": true
+          }
+        ]
+      },
+      {
+        "name": "Drink",
+        "number": 3,
+        "required": false,
+        "multiple_allowed": false,
+        "items": [
+          {
+            "name": "Coffee",
+            "number": 3,
+            "multiple_allowed": true,
+            "provided": false,
+            "default": false,
+            "user_specified": true
+          },
+          {
+            "name": "Water",
+            "number": 4,
+            "multiple_allowed": false,
+            "provided": false,
+            "default": true,
+            "user_specified": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lunch",
+    "courses": [
+      {
+        "name": "Main",
+        "number": 1,
+        "required": true,
+        "multiple_allowed": false,
+        "items": [
+          {
+            "name": "Sandwich",
+            "number": 1,
+            "multiple_allowed": false,
+            "provided": false,
+            "default": false,
+            "user_specified": true
+          }
+        ]
+      },
+      {
+        "name": "Side",
+        "number": 2,
+        "required": true,
+        "multiple_allowed": true,
+        "items": [
+          {
+            "name": "Chips",
+            "number": 2,
+            "multiple_allowed": true,
+            "provided": false,
+            "default": false,
+            "user_specified": true
+          }
+        ]
+      },
+      {
+        "name": "Drink",
+        "number": 3,
+        "required": false,
+        "multiple_allowed": false,
+        "items": [
+          {
+            "name": "Soda",
+            "number": 3,
+            "multiple_allowed": true,
+            "provided": false,
+            "default": false,
+            "user_specified": true
+          },
+          {
+            "name": "Water",
+            "number": 4,
+            "multiple_allowed": false,
+            "provided": false,
+            "default": true,
+            "user_specified": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dinner",
+    "courses": [
+      {
+        "name": "Main",
+        "number": 1,
+        "required": true,
+        "multiple_allowed": false,
+        "items": [
+          {
+            "name": "Steak",
+            "number": 1,
+            "multiple_allowed": false,
+            "provided": false,
+            "default": false,
+            "user_specified": true
+          }
+        ]
+      },
+      {
+        "name": "Side",
+        "number": 2,
+        "required": true,
+        "multiple_allowed": true,
+        "items": [
+          {
+            "name": "Potatoes",
+            "number": 2,
+            "multiple_allowed": true,
+            "provided": false,
+            "default": false,
+            "user_specified": true
+          }
+        ]
+      },
+      {
+        "name": "Drink",
+        "number": 3,
+        "required": false,
+        "multiple_allowed": false,
+        "items": [
+          {
+            "name": "Wine",
+            "number": 3,
+            "multiple_allowed": true,
+            "provided": false,
+            "default": false,
+            "user_specified": true
+          },
+          {
+            "name": "Water",
+            "number": 5,
+            "multiple_allowed": false,
+            "provided": true,
+            "default": false,
+            "user_specified": false
+          }
+        ]
+      },
+      {
+        "name": "Desert",
+        "number": 4,
+        "required": true,
+        "multiple_allowed": true,
+        "items": [
+          {
+            "name": "Cake",
+            "number": 4,
+            "multiple_allowed": true,
+            "provided": false,
+            "default": false,
+            "user_specified": true
+          }
+        ]
+      }
+    ]
+  }
+
+]

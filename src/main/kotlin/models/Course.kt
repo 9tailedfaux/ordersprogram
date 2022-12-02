@@ -7,6 +7,11 @@ data class Course(
     val required: Boolean,
     val multipleAllowed: Boolean
 ) {
+    init {
+        for (item in items.values) {
+            item.course = this
+        }
+    }
     override fun toString(): String {
         var string = "$name: ("
         for ((index, item) in items.values.withIndex()) {

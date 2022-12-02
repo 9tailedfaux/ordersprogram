@@ -2,7 +2,7 @@ package models
 
 class InitialOrder(
     val items: IntArray,
-    val courses: IntArray,
+    val courses: ArrayList<Int>,
     meal: String
 ): BaseOrder(meal) {
     val courseCounts = HashMap<Int, Int>()
@@ -18,25 +18,18 @@ class InitialOrder(
 }
 
 class FinalOrder(
-    meal: String,
+    initialOrder: InitialOrder,
     val items: ArrayList<Item>
-): BaseOrder(meal) {
+): BaseOrder(initialOrder.meal) {
 
     override fun toString(): String {
         var string = meal
         if (items.isEmpty()) return string + "contains no items"
         string += ": "
-        var oldCourse = items[0].course.number
-        for ((index, item) in items.withIndex()) {
-            if (item.course.number != oldCourse) string += "${item.course.name}: ("
+        val distinctItems = items.distinctBy { it.number }
+        for ((index, item) in distinctItems.withIndex()) {
             string += item.name
-            oldCourse = item.course.number
-            //if this is the last item or the next item has a different course
-            string += if (index == items.lastIndex || items[index + 1].course.number != oldCourse) {
-                "), "
-            } else {
-                ", "
-            }
+            if (index < distinctItems.lastIndex) string += ", "
         }
         return string
     }

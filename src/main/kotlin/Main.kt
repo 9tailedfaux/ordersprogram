@@ -10,10 +10,10 @@ fun main(args: Array<String>) {
     when (args.size) {
         0 -> {
             println("Usage: ordersprogram [meal] [item numbers] [course numbers] [alternative menu json (optional)]" +
-                    "\nItem numbers: comma separated, no spaces" +
-                    "\nCourse numbers: optional. comma separated, no spaces. corresponds to items. if omitted, item numbers will be used" +
-                    "\nAlternative menu: path to a .json file. optional. if omitted, default menu will be used" +
-                    "default menu json can be found in menu.json in this project")
+                    "\n\tItem numbers: comma separated, no spaces" +
+                    "\n\tCourse numbers: optional. comma separated, no spaces. corresponds to items. if omitted, item numbers will be used" +
+                    "\n\tAlternative menu: path to a .json file. optional. if omitted, default menu will be used" +
+                    "\n\t\tdefault menu json can be found in menu.json in this project")
             exitProcess(0)
         }
         1 -> {
