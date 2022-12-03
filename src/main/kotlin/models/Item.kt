@@ -11,6 +11,10 @@ data class Item(
     var count = 0
     lateinit var course: Course
     override fun toString(): String {
-        return name
+        var string = name
+        if (count > 1) {
+            string += "($count)"
+        }
+        return string
     }
 }

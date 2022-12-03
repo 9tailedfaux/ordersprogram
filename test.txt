@@ -1,0 +1,58 @@
+Input: Breakfast 1,2,3
+Expected output: Breakfast: Eggs, Toast, Coffee
+Program ouput: Breakfast: Eggs, Toast, Coffee
+PASSED
+
+Input: Breakfast 2,3,1
+Expected output: Breakfast: Eggs, Toast, Coffee
+Program ouput: Breakfast: Eggs, Toast, Coffee
+PASSED
+
+Input: Breakfast 1,2,3,3,3
+Expected output: Breakfast: Eggs, Toast, Coffee(3)
+Program ouput: Breakfast: Eggs, Toast, Coffee(3)
+PASSED
+
+Input: Breakfast 1
+Expected output: Side is required
+Program ouput: Side is required
+PASSED
+
+Input: Lunch 1,2,3
+Expected output: Lunch: Sandwich, Chips, Soda
+Program ouput: Lunch: Sandwich, Chips, Soda
+PASSED
+
+Input: Lunch 1,2
+Expected output: Lunch: Sandwich, Chips, Water
+Program ouput: Lunch: Sandwich, Chips, Water
+PASSED
+
+Input: Lunch 1,1,2,3
+Expected output: You cannot have more than one Sandwich
+Program ouput: You cannot have more than one Sandwich
+PASSED
+
+Input: Lunch 1,2,2
+Expected output: Lunch: Sandwich, Chips(2), Water
+Program ouput: Lunch: Sandwich, Chips(2), Water
+PASSED
+
+Input: Lunch
+Expected output: Too few arguments. You must order something
+Program ouput: Too few arguments. You must order something
+PASSED
+
+Input: Dinner 1,2,3,4
+Expected output: Dinner: Steak, Potatoes, Wine, Water, Cake
+Program ouput: Dinner: Steak, Potatoes, Wine, Water, Cake
+PASSED
+
+Input: Dinner 1,2,3
+Expected output: Desert is required
+Program ouput: Desert is required
+PASSED
+
+
+Passed: 11
+Failed: 0

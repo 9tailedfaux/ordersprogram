@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030b6f9b-ff63-4d06-a0de-c9c6df3c2525" name="Changes" comment="e">
+    <list default="true" id="030b6f9b-ff63-4d06-a0de-c9c6df3c2525" name="Changes" comment="program works for some test cases, added testing script">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu.json" beforeDir="false" afterPath="$PROJECT_DIR$/menu.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Course.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/Course.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/DataParserUtility.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/DataParserUtility.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Item.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/Item.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Order.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/Order.kt" afterDir="false" />
@@ -67,7 +64,7 @@
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="ordersprogram.main" />
-      <option name="PROGRAM_PARAMETERS" value="Breakfast 1,2,3" />
+      <option name="PROGRAM_PARAMETERS" value="Breakfast 1" />
       <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -90,8 +87,17 @@
       <workItem from="1669819856359" duration="15270000" />
       <workItem from="1669945043097" duration="3923000" />
       <workItem from="1669949780702" duration="5858000" />
-      <workItem from="1669956837311" duration="3121000" />
+      <workItem from="1669956837311" duration="3811000" />
+      <workItem from="1670082020201" duration="3393000" />
     </task>
+    <task id="LOCAL-00001" summary="program works for some test cases, added testing script">
+      <created>1669961400884</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669961400884</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,15 +114,15 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="program works for some test cases, added testing script" />
+    <option name="LAST_COMMIT_MESSAGE" value="program works for some test cases, added testing script" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/models/DataParserUtility.kt</url>
-          <line>88</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="models.Meal" memberName="courses" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

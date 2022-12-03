@@ -1,30 +1,31 @@
 package models
 
-import com.google.gson.Gson
 import com.google.gson.JsonParser
 import java.nio.file.Files
 import java.nio.file.Paths
 
 class DataParserUtility {
-    private val gson = Gson()
 
     fun processOrder(initialOrder: InitialOrder, menu: Menu): FinalOrder {
         val list = ArrayList<Item>()
         val meal = menu.meals[initialOrder.meal]!!
         for ((index, courseNumber) in initialOrder.courses.withIndex()) {
-            val item = meal.courses[courseNumber]!!.items[index + 1]!!
+            val item = meal.courses[courseNumber]!!.items[initialOrder.items[index]]!!
+            item.count = initialOrder.itemCounts[item.number]!!
             list.add(item)
         }
 
         //add defaults if they aren't already there
-        initialOrder.courses.distinct().forEach { courseNumber ->
-            meal.courses[courseNumber]!!.items.forEach { itemEntry ->
-                if (itemEntry.value.provided
-                    && !list.any {
-                        it.number == itemEntry.value.number
-                    }
+        meal.courses.values.forEach { course ->
+            meal.courses[course.number]!!.items.values.forEach { itemEntry ->
+                if (
+                    (itemEntry.default
+                            && !list.any {
+                                it.number == itemEntry.number || it.course.number == itemEntry.course.number
+                            })
+                    || itemEntry.provided
                 ) {
-                    list.add(itemEntry.value)
+                    list.add(itemEntry)
                 }
             }
         }
@@ -81,8 +82,8 @@ class DataParserUtility {
         }
         for ((index, item) in initialOrder.items.withIndex()) {
             try {
-                if (!menu.meals[initialOrder.meal]!!.courses[index + 1]!!.items.any { it.value.number == item }) {
-                    onError("Course ${initialOrder.courses[index + 1]} does not contain item $item")
+                if (!menu.meals[initialOrder.meal]!!.courses[initialOrder.courses[index]]!!.items.any { it.value.number == item }) {
+                    onError("Course ${initialOrder.courses[index]} does not contain item $item")
                     return false
                 }
             } catch (e: NullPointerException) {
@@ -103,17 +104,20 @@ class DataParserUtility {
     private fun checkDuplicateValidity(initialOrder: InitialOrder, menu: Menu, onError: (error: String) -> Unit): Boolean {
         for ((index, itemNum) in initialOrder.items.withIndex()) {
             val item = menu.meals[initialOrder.meal]!!.courses[initialOrder.courses[index]]!!.items[itemNum]!!
-            if (initialOrder.itemCounts[itemNum]!! > 1 && !item.multipleAllowed && !item.course.multipleAllowed) {
+            if (initialOrder.itemCounts[itemNum]!! > 1 && !item.multipleAllowed) {
                 onError("You cannot have more than one ${item.name}")
                 return false
             }
         }
 
-        for (courseNum in initialOrder.courses) {
+        for ((index, courseNum) in initialOrder.courses.withIndex()) {
             val course = menu.meals[initialOrder.meal]!!.courses[courseNum]!!
             if (initialOrder.courseCounts[courseNum]!! > 1 && !course.multipleAllowed) {
-                onError("You cannot have more than one ${course.name}")
-                return false
+                val item = menu.meals[initialOrder.meal]!!.courses[courseNum]!!.items[initialOrder.items[index]]!!
+                if (!item.multipleAllowed) {
+                    onError("You cannot have more than one ${course.name}")
+                    return false
+                }
             }
         }
 

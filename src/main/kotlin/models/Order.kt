@@ -28,7 +28,7 @@ class FinalOrder(
         string += ": "
         val distinctItems = items.distinctBy { it.number }
         for ((index, item) in distinctItems.withIndex()) {
-            string += item.name
+            string += item.toString()
             if (index < distinctItems.lastIndex) string += ", "
         }
         return string
