@@ -19,7 +19,7 @@ class InitialOrder(
 
 class FinalOrder(
     initialOrder: InitialOrder,
-    val items: ArrayList<Item>
+    private val items: ArrayList<Item>
 ): BaseOrder(initialOrder.meal) {
 
     override fun toString(): String {

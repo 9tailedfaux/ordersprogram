@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="030b6f9b-ff63-4d06-a0de-c9c6df3c2525" name="Changes" comment="program works for some test cases, added testing script">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/DataParserUtility.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/DataParserUtility.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Item.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/Item.kt" afterDir="false" />
+    <list default="true" id="030b6f9b-ff63-4d06-a0de-c9c6df3c2525" name="Changes" comment="PASSES ALL TESTS">
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Order.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/Order.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +84,7 @@
       <workItem from="1669945043097" duration="3923000" />
       <workItem from="1669949780702" duration="5858000" />
       <workItem from="1669956837311" duration="3811000" />
-      <workItem from="1670082020201" duration="3393000" />
+      <workItem from="1670082020201" duration="3856000" />
     </task>
     <task id="LOCAL-00001" summary="program works for some test cases, added testing script">
       <created>1669961400884</created>
@@ -97,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669961400884</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="PASSES ALL TESTS">
+      <created>1670085863238</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670085863238</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +119,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="program works for some test cases, added testing script" />
-    <option name="LAST_COMMIT_MESSAGE" value="program works for some test cases, added testing script" />
+    <MESSAGE value="PASSES ALL TESTS" />
+    <option name="LAST_COMMIT_MESSAGE" value="PASSES ALL TESTS" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
