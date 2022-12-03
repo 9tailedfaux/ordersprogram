@@ -180,7 +180,7 @@ class DataParserUtility {
     }.toIntArray()
 
     companion object {
-        private var instance: DataParserUtility = DataParserUtility()
+        private val instance: DataParserUtility = DataParserUtility()
 
         fun getInstance(): DataParserUtility {
             return instance
