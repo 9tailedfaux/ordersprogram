@@ -18,7 +18,7 @@ fun main(args: Array<String>) {
         }
         1 -> {
             println("Too few arguments. You must order something")
-            exitProcess(1)
+            exitProcess(0)
         }
         2 -> {
             items = parser.parseItemsCourses(args[1])
@@ -37,7 +37,7 @@ fun main(args: Array<String>) {
         }
         else -> {
             println("Too many arguments. What is you doing?")
-            exitProcess(1)
+            exitProcess(0)
         }
     }
 
